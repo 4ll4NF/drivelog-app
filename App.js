@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import react from "react";
+import { SafeAreaView, View, Text } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Login from './telas/Login';
+import Principal from './telas/Principal';
+import { NavigationContainer } from "@react-navigation/native";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+var pilha = createStackNavigator();
+
+function MinhaPilha(){
+  return(
+    <pilha.Navigator initialRouteName="Login" >
+      <pilha.Screen name="Login" component={Login} options={{ headerShown: false}}  />
+      <pilha.Screen name="Principal" component={Principal} />
+      
+    </pilha.Navigator>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function App(){
+  return(
+    <NavigationContainer>
+      <MinhaPilha/>
+    </NavigationContainer>
+  )
+  
+}
+
+export default App;
+
+// 
