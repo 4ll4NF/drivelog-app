@@ -21,7 +21,7 @@ export default function Principal(){
                 <MaterialIcons name="search" color={color} size={size} />
             ) }} />
             <Aba.Screen name="Meus Veiculos" component={TelaVeiculos} options={{tabBarIcon: ({color, size}) => (
-                <MaterialIcons name="ambulance" color={color} size={size} />
+                <MaterialIcons name="directions-car" color={color} size={size} />
             ) }} />
             <Aba.Screen name="Configurações" component={TelaConfig} options={{tabBarIcon: ({color, size}) => (
                 <MaterialIcons name="settings" color={color} size={size} />
